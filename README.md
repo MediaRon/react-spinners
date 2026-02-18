@@ -13,13 +13,13 @@ A collection of 30 semi-transparent SVG spinners for React applications.
 ## Installation
 
 ```bash
-npm install @mediaronpkg/react-spinners
+npm install @mediaron/react-spinners
 ```
 
 or
 
 ```bash
-yarn add @mediaronpkg/react-spinners
+yarn add @mediaron/react-spinners
 ```
 
 ## Usage
@@ -27,21 +27,41 @@ yarn add @mediaronpkg/react-spinners
 First, import the CSS file to enable spinner animations:
 
 ```tsx
-import '@mediaronpkg/react-spinners/spinner.css';
+import '@mediaron/react-spinners/spinner.css';
 ```
 
 Then use any spinner component:
 
 ```tsx
-import { CircleSpinner } from '@mediaronpkg/react-spinners';
+import { ReactSpinner1 } from '@mediaron/react-spinners';
 
 function App() {
   return (
     <div>
-      <CircleSpinner />
+      <ReactSpinner1 />
     </div>
   );
 }
+```
+
+### Props
+
+The spinners use the following props:
+
+* `size` in pixels (default `24`).
+* `color` - The color of the loader.
+* `speedMultiplier` - How fast the loader should spin (default `1`).
+
+Example:
+
+```tsx
+<ReactSpinner2
+	size={ 50 }
+	speedMultiplier={ 1.1 }
+	color="#873F49"
+	aria-label="Loading..."
+	role="img"
+/>
 ```
 
 ### Custom Styling
@@ -57,13 +77,9 @@ The spinners use the `dlx-spinner` CSS class for animations. You can customize t
 Or use the `speedMultiplier` prop to control animation speed:
 
 ```tsx
-<CircleSpinner speedMultiplier={0.5} /> {/* Half speed */}
-<CircleSpinner speedMultiplier={2} /> {/* Double speed */}
+<ReactSpinner1 speedMultiplier={0.5} /> {/* Half speed */}
+<ReactSpinner1 speedMultiplier={2} /> {/* Double speed */}
 ```
-
-## Available Spinners
-
-- `CircleSpinner` - Animated circular spinner with pulsing effect
 
 More spinners coming soon!
 
