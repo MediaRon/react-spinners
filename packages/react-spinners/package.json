@@ -1,7 +1,7 @@
 {
 	"name": "@mediaron/react-spinners",
 	"version": "0.1.0",
-	"description": "A collection of 30 semi-transparent SVG spinners",
+	"description": "A collection of 26 semi-transparent SVG spinners",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
@@ -47,7 +47,7 @@
 		"typescript"
 	],
 	"author": "",
-	"license": "MIT",
+	"license": "GPL-3.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/MediaRon/react-spinners.git",
