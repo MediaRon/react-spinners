@@ -5,6 +5,10 @@
 	"workspaces": [
 		"packages/*"
 	],
+	"overrides": {
+		"react": "^19.2.0",
+		"react-dom": "^19.2.0"
+	},
 	"scripts": {
 		"build": "npm run build -w packages/react-spinners",
 		"build:demo": "npm run build:demo -w packages/demo",
