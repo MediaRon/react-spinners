@@ -141,3 +141,6 @@ src/index.ts
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Demo build output
+packages/demo/dist
