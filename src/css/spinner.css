@@ -1,0 +1,11 @@
+@keyframes mr-spin {
+	to { transform: rotate(360deg); }
+  }
+  
+.mr-spinner {
+	display: inline-block;
+	animation-name: mr-spin;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	transform-origin: center;
+}
