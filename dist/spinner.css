@@ -1,0 +1,11 @@
+@keyframes dlx-spin {
+	to { transform: rotate(360deg); }
+  }
+  
+.dlx-spinner {
+	display: inline-block;
+	animation-name: dlx-spin;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	transform-origin: center;
+}

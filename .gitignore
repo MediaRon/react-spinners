@@ -80,7 +80,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Generated files
 src/react/
@@ -141,10 +140,6 @@ src/index.ts
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
-# Demo build output
-packages/demo/dist
-
 packages/.DS_Store
 
 .DS_Store
