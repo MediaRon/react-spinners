@@ -1,0 +1,53 @@
+{
+  "name": "@mediaronpkg/react-spinners",
+  "version": "0.1.0",
+  "description": "A collection of 30 semi-transparent SVG spinners",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "commonjs",
+  "sideEffects": false,
+  "scripts": {
+    "generate:components": "node scripts/generate-components.js",
+    "generate:index": "node scripts/generate-index.js",
+    "prebuild": "npm run generate:components && npm run generate:index",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "clean": "rm -rf dist src/react src/index.ts"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^8.1.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "react",
+    "spinner",
+    "loader",
+    "svg",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MediaRon/react-spinners.git"
+  }
+}
