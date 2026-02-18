@@ -22,7 +22,7 @@
 		"generate:components": "node scripts/generate-components.js",
 		"generate:index": "node scripts/generate-index.js",
 		"prebuild": "npm run generate:components && npm run generate:index",
-		"build": "tsup src/index.ts --format cjs,esm --dts",
+		"build": "npm run clean && npm run prebuild && tsup src/index.ts --format cjs,esm --dts",
 		"postbuild": "node scripts/copy-css.js",
 		"clean": "rm -rf dist src/react src/index.ts"
 	},
