@@ -2,10 +2,6 @@
 
 A collection of 26 semi-transparent SVG spinners for React applications.
 
-## 🎯 [Live Demo](https://mediaron.github.io/react-spinners/)
-
-Check out the [interactive gallery](https://mediaron.github.io/react-spinners/) to preview all spinners and customize their properties in real-time!
-
 ## Features
 
 - 🎨 Beautiful semi-transparent SVG spinners
@@ -122,10 +118,6 @@ Import by name: `import { ReactSpinner1, ReactSpinner5 } from '@mediaron/react-s
 
 ## Development
 
-This is a monorepo with workspaces:
-- `packages/react-spinners` - The spinner library
-- `packages/demo` - Interactive demo gallery
-
 ### Prerequisites
 
 - Node.js 18.x or higher
@@ -137,26 +129,20 @@ This is a monorepo with workspaces:
 # Install dependencies
 npm install
 
-# Build the library
+# Generate React components from SVGs and build
 npm run build
 
-# Run the demo locally
-npm run dev
+# Clean generated files
+npm run clean
 ```
 
 ### Project Structure
 
 ```
-packages/
-├── react-spinners/       # The library
-│   ├── src/
-│   │   ├── svg/          # Raw SVG files (source of truth)
-│   │   ├── react/        # Generated React components (auto-generated)
-│   │   └── index.ts      # Main export file (auto-generated)
-│   └── package.json
-└── demo/                 # Interactive demo site
-    ├── src/
-    └── package.json
+src/
+├── svg/          # Raw SVG files (source of truth)
+├── react/        # Generated React components (auto-generated)
+└── index.ts      # Main export file (auto-generated)
 ```
 
 ### Build Process
@@ -168,7 +154,7 @@ packages/
 
 ### Adding New Spinners
 
-1. Add your SVG file to `packages/react-spinners/src/svg/` (e.g., `MySpinner.svg`)
+1. Add your SVG file to `src/svg/` (e.g., `MySpinner.svg`)
 2. Run `npm run build`
 3. The component will be automatically generated and exported
 

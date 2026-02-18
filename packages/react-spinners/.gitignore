@@ -1,0 +1,6 @@
+# Build output
+dist
+
+# Generated files
+src/react/
+src/index.ts
