@@ -23,7 +23,7 @@
     "generate:index": "node scripts/generate-index.js",
     "prebuild": "npm run generate:components && npm run generate:index",
     "build": "tsup src/index.ts --format cjs,esm --dts",
-    "postbuild": "cp src/css/spinner.css dist/spinner.css",
+    "postbuild": "node scripts/copy-css.js",
     "clean": "rm -rf dist src/react src/index.ts"
   },
   "peerDependencies": {
