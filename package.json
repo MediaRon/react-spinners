@@ -50,6 +50,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/MediaRon/react-spinners.git"
+		"url": "https://github.com/MediaRon/react-spinners.git",
+		"homepage": "https://github.com/MediaRon/react-spinners"
 	}
 }

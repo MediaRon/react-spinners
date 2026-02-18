@@ -1,6 +1,6 @@
 # react-spinners
 
-A collection of 30 semi-transparent SVG spinners for React applications.
+A collection of 26 semi-transparent SVG spinners for React applications.
 
 ## Features
 
@@ -81,7 +81,40 @@ Or use the `speedMultiplier` prop to control animation speed:
 <ReactSpinner1 speedMultiplier={2} /> {/* Double speed */}
 ```
 
-More spinners coming soon!
+### Available Spinners
+
+All spinners in `src/svg/` are available as React components:
+
+| Component     | Source file           |
+| ------------ | --------------------- |
+| ReactSpinner1  | react-spinner-1.svg   |
+| ReactSpinner2  | react-spinner-2.svg   |
+| ReactSpinner3  | react-spinner-3.svg   |
+| ReactSpinner4  | react-spinner-4.svg   |
+| ReactSpinner5  | react-spinner-5.svg   |
+| ReactSpinner6  | react-spinner-6.svg   |
+| ReactSpinner7  | react-spinner-7.svg   |
+| ReactSpinner8  | react-spinner-8.svg   |
+| ReactSpinner9  | react-spinner-9.svg   |
+| ReactSpinner10 | react-spinner-10.svg  |
+| ReactSpinner11 | react-spinner-11.svg  |
+| ReactSpinner12 | react-spinner-12.svg  |
+| ReactSpinner13 | react-spinner-13.svg  |
+| ReactSpinner14 | react-spinner-14.svg  |
+| ReactSpinner15 | react-spinner-15.svg  |
+| ReactSpinner16 | react-spinner-16.svg  |
+| ReactSpinner17 | react-spinner-17.svg  |
+| ReactSpinner18 | react-spinner-18.svg  |
+| ReactSpinner19 | react-spinner-19.svg  |
+| ReactSpinner20 | react-spinner-20.svg  |
+| ReactSpinner21 | react-spinner-21.svg  |
+| ReactSpinner22 | react-spinner-22.svg  |
+| ReactSpinner23 | react-spinner-23.svg  |
+| ReactSpinner24 | react-spinner-24.svg  |
+| ReactSpinner25 | react-spinner-25.svg  |
+| ReactSpinner26 | react-spinner-26.svg  |
+
+Import by name: `import { ReactSpinner1, ReactSpinner5 } from '@mediaron/react-spinners';`
 
 ## Development
 
