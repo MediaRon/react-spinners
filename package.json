@@ -13,6 +13,7 @@
 		"build": "npm run build -w packages/react-spinners",
 		"build:demo": "npm run build:demo -w packages/demo",
 		"dev": "npm run dev -w packages/demo",
-		"release": "npm run build && npm publish -w packages/react-spinners"
+		"release": "npm run build && cd packages/react-spinners && npm publish",
+		"release:public": "npm run build && cd packages/react-spinners && npm publish --access public"
 	}
 }

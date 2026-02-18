@@ -2,7 +2,7 @@
 
 A collection of 26 semi-transparent SVG spinners for React applications.
 
-<a href="https://mediaron.github.io/react-spinners/">View a Live Demo</a>
+<a href="https://spinners.mediaron.com">View a Live Demo</a>
 
 ## Features
 

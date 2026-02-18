@@ -1,6 +1,6 @@
 {
 	"name": "@mediaron/react-spinners",
-	"version": "0.1.2",
+	"version": "0.1.4",
 	"description": "A collection of 26 semi-transparent SVG spinners",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
@@ -13,6 +13,7 @@
 		},
 		"./spinner.css": "./dist/spinner.css"
 	},
+	"private": false,
 	"files": [
 		"dist"
 	],
