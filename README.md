@@ -24,6 +24,14 @@ yarn add @mediaronpkg/react-spinners
 
 ## Usage
 
+First, import the CSS file to enable spinner animations:
+
+```tsx
+import '@mediaronpkg/react-spinners/spinner.css';
+```
+
+Then use any spinner component:
+
 ```tsx
 import { CircleSpinner } from '@mediaronpkg/react-spinners';
 
@@ -34,6 +42,23 @@ function App() {
     </div>
   );
 }
+```
+
+### Custom Styling
+
+The spinners use the `dlx-spinner` CSS class for animations. You can customize the animation by overriding the CSS:
+
+```css
+.dlx-spinner {
+  animation-duration: 2s; /* Slower rotation */
+}
+```
+
+Or use the `speedMultiplier` prop to control animation speed:
+
+```tsx
+<CircleSpinner speedMultiplier={0.5} /> {/* Half speed */}
+<CircleSpinner speedMultiplier={2} /> {/* Double speed */}
 ```
 
 ## Available Spinners

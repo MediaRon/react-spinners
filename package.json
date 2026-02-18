@@ -10,7 +10,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
-    }
+    },
+    "./spinner.css": "./dist/spinner.css"
   },
   "files": [
     "dist"
@@ -22,6 +23,7 @@
     "generate:index": "node scripts/generate-index.js",
     "prebuild": "npm run generate:components && npm run generate:index",
     "build": "tsup src/index.ts --format cjs,esm --dts",
+    "postbuild": "cp src/css/spinner.css dist/spinner.css",
     "clean": "rm -rf dist src/react src/index.ts"
   },
   "peerDependencies": {
