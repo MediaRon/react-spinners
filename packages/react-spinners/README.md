@@ -2,6 +2,8 @@
 
 A collection of 26 semi-transparent SVG spinners for React applications.
 
+<a href="https://mediaron.github.io/react-spinners/">View a Live Demo</a>
+
 ## Features
 
 - 🎨 Beautiful semi-transparent SVG spinners
@@ -118,6 +120,7 @@ Import by name: `import { ReactSpinner1, ReactSpinner5 } from '@mediaron/react-s
 
 ## Development
 
+Source is available at: <a href="https://github.com/MediaRon/react-spinners/">React Spinners (GitHub)</a>.
 ### Prerequisites
 
 - Node.js 18.x or higher

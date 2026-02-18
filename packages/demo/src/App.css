@@ -1,3 +1,15 @@
+/* Global Color Palette. */
+:root {
+  --dlx-blue: #2172eb;
+  --dlx-blue-dark: #1a378c;
+  --dlx-blue-light: #6dafff;
+  --dlx-charcoal: #3d403d;
+  --dlx-orange: #f08b2d;
+  --dlx-orange-brown: #ce7a36;
+  --dlx-grey-light: #f2f2f2;
+  --dlx-white: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +19,9 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--dlx-blue-light) 0%, var(--dlx-blue) 50%, var(--dlx-blue-dark) 100%);
   min-height: 100vh;
-  color: #333;
+  color: var(--dlx-charcoal);
 }
 
 .app {
@@ -20,14 +32,49 @@ body {
 
 header {
   text-align: center;
-  color: white;
+  color: var(--dlx-white);
   margin-bottom: 2rem;
 }
 
 header h1 {
   font-size: 3rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--dlx-white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.header-badge:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--dlx-white);
+}
+
+.header-badge-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
 }
 
 header p {
@@ -35,8 +82,82 @@ header p {
   opacity: 0.9;
 }
 
+.spinner-picker-section {
+  background: var(--dlx-white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.spinner-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.spinner-picker-header h2 {
+  margin: 0;
+  color: var(--dlx-charcoal);
+}
+
+.download-svg-button {
+  background: var(--dlx-blue);
+  color: var(--dlx-white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.download-svg-button:hover {
+  background: var(--dlx-blue-dark);
+}
+
+.spinner-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: 0.5rem;
+}
+
+.spinner-picker-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dlx-white);
+  border: 1px solid var(--dlx-charcoal);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.spinner-picker-cell:hover {
+  background: var(--dlx-grey-light);
+}
+
+.spinner-picker-cell.selected {
+  background: var(--dlx-blue-dark);
+  border-color: var(--dlx-blue-dark);
+}
+
+.spinner-picker-cell.selected:hover {
+  background: var(--dlx-blue-dark);
+  filter: brightness(1.1);
+}
+
+/* Pause spinner animation in the picker so users can see the static design. */
+.spinner-picker-section .dlx-spinner {
+  animation-play-state: paused;
+}
+
 .controls {
-  background: white;
+  background: var(--dlx-white);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -54,40 +175,60 @@ header p {
 .control-group label {
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #555;
+  color: var(--dlx-charcoal);
 }
 
 .control-group input[type="range"] {
   width: 100%;
   margin-top: 0.5rem;
+  accent-color: var(--dlx-blue);
 }
 
-.control-group input[type="color"] {
-  width: 60px;
+.color-control-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.control-group input[type="color"].color-swatch {
+  width: 40px;
   height: 40px;
-  border: none;
-  border-radius: 4px;
+  min-width: 40px;
+  border: 2px solid var(--dlx-grey-light);
+  border-radius: 50%;
   cursor: pointer;
+  padding: 0;
+  background: transparent;
+}
+
+.control-group input[type="color"].color-swatch::-webkit-color-swatch-wrapper {
+  padding: 2px;
+}
+
+.control-group input[type="color"].color-swatch::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
 }
 
 .color-input {
-  margin-left: 10px;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
   flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--dlx-grey-light);
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 .control-group select {
   padding: 0.5rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--dlx-grey-light);
   border-radius: 4px;
   font-size: 1rem;
   margin-top: 0.5rem;
 }
 
 .preview-section {
-  background: white;
+  background: var(--dlx-white);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -96,7 +237,7 @@ header p {
 
 .preview-section h2 {
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--dlx-charcoal);
 }
 
 .preview-box {
@@ -104,12 +245,12 @@ header p {
   justify-content: center;
   align-items: center;
   min-height: 300px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: var(--dlx-grey-light);
   border-radius: 8px;
 }
 
 .code-section {
-  background: white;
+  background: var(--dlx-white);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -118,12 +259,12 @@ header p {
 
 .code-section h2 {
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--dlx-charcoal);
 }
 
 .code-block {
-  background: #282c34;
-  color: #abb2bf;
+  background: var(--dlx-charcoal);
+  color: var(--dlx-grey-light);
   padding: 1.5rem;
   border-radius: 8px;
   overflow-x: auto;
@@ -137,8 +278,8 @@ header p {
 }
 
 .copy-button {
-  background: #667eea;
-  color: white;
+  background: var(--dlx-blue);
+  color: var(--dlx-white);
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
@@ -149,60 +290,7 @@ header p {
 }
 
 .copy-button:hover {
-  background: #5568d3;
-}
-
-.gallery-section {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-section h2 {
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-.spinner-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-}
-
-.spinner-card {
-  background: #f8f9fa;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  padding: 1.5rem;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.spinner-card:hover {
-  background: #e9ecef;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.spinner-card.selected {
-  border-color: #667eea;
-  background: #f0f3ff;
-}
-
-.spinner-container {
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.spinner-name {
-  font-size: 0.875rem;
-  color: #666;
-  font-weight: 500;
+  background: var(--dlx-blue-dark);
 }
 
 @media (max-width: 768px) {
@@ -218,7 +306,7 @@ header p {
     grid-template-columns: 1fr;
   }
 
-  .spinner-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  .spinner-picker-grid {
+    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
   }
 }
