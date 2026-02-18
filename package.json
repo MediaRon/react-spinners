@@ -1,7 +1,7 @@
 {
-	"name": "@mediaron/react-spinners",
+	"name": "react-spinners-workspace",
 	"version": "0.1.2",
-	"private": false,
+	"private": true,
 	"workspaces": [
 		"packages/*"
 	],
@@ -12,6 +12,7 @@
 	"scripts": {
 		"build": "npm run build -w packages/react-spinners",
 		"build:demo": "npm run build:demo -w packages/demo",
-		"dev": "npm run dev -w packages/demo"
+		"dev": "npm run dev -w packages/demo",
+		"release": "npm run build && npm publish -w packages/react-spinners"
 	}
 }
